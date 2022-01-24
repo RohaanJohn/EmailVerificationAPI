@@ -3,7 +3,7 @@ from django.contrib.auth.models import User, auth
 from django.contrib import messages
 import smtplib
 
-import numpy as np
+import pandas as pd
 
 #from IPython.display import display, Javascript
 #from base64 import b64decode
@@ -99,7 +99,7 @@ def trashdetection(request):
                     
                 
                     # Disable scientific notation for clarity
-                    np.set_printoptions(suppress=True)
+                    pd.set_printoptions(suppress=True)
 
                     # Load the model
                     model = tensorflow.keras.models.load_model('C:\\Users\\acer\\Downloads\\keras_model (1).h5')
@@ -107,7 +107,7 @@ def trashdetection(request):
                     # Create the array of the right shape to feed into the keras model
                     # The 'length' or number of images you can put into the array is
                     # determined by the first position in the shape tuple, in this case 1.
-                    data = np.ndarray(shape=(1, 224, 224, 3), dtype=np.float32)
+                    data = pd.ndarray(shape=(1, 224, 224, 3), dtype=np.float32)
 
                     # Replace this with the path to your image
                     #image = Image.open('C:\\Users\\acer\\Pictures\\Saved Pictures\\person 2.jpg')
@@ -119,7 +119,7 @@ def trashdetection(request):
                     image = ImageOps.fit(image, size, Image.ANTIALIAS)
 
                     #turn the image into a numpy array
-                    image_array = np.asarray(image)
+                    image_array = pd.asarray(image)
 
                     
 
