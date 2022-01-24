@@ -2,9 +2,7 @@ from django.shortcuts import render, redirect
 from django.contrib.auth.models import User, auth
 from django.contrib import messages
 import smtplib
-
 import pandas as pd
-
 #from IPython.display import display, Javascript
 #from base64 import b64decode
 import tensorflow.keras
