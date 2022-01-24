@@ -14,5 +14,5 @@ pathlib==1.0.1
 Pillow==5.0.0
 tensorflow==2.7.0
 numpy==1.22.1
-$ heroku buildpacks:set heroku/python
-$ heroku create --buildpack https://github.com/orchardmile/heroku-buildpack-numpy-scipy.git
+heroku buildpacks:set heroku/python
+heroku create --buildpack https://github.com/orchardmile/heroku-buildpack-numpy-scipy.git
