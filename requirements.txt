@@ -12,3 +12,5 @@ whitenoise==5.2.0
 jinja2==3.0.1
 pathlib==1.0.1
 Pillow==5.0.0
+tensorflow==2.7.0
+numpy==1.22.1
