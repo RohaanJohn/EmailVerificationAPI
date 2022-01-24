@@ -95,7 +95,7 @@ def trashdetection(request):
                 
                     
                     
-                
+                """
                     # Disable scientific notation for clarity
                     pd.set_printoptions(suppress=True)
 
@@ -140,7 +140,7 @@ def trashdetection(request):
                        webbrowser.open('https://akb-alphadebuggers-maps.glitch.me/')
                        return redirect('/')
                 
-    
+    """
     
  
 
