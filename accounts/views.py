@@ -3,7 +3,7 @@ from django.contrib.auth.models import User, auth
 from django.contrib import messages
 import smtplib
 
-
+import numpy as np
 
 #from IPython.display import display, Javascript
 #from base64 import b64decode
