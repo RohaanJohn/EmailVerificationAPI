@@ -4,10 +4,9 @@ from django.contrib import messages
 import smtplib
 
 
-import numpy as np
-import cv2
-from IPython.display import display, Javascript
-from base64 import b64decode
+
+#from IPython.display import display, Javascript
+#from base64 import b64decode
 import tensorflow.keras
 from PIL import Image, ImageOps
 
