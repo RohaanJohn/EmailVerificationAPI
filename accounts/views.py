@@ -10,7 +10,7 @@ from IPython.display import display, Javascript
 from base64 import b64decode
 import tensorflow.keras
 from PIL import Image, ImageOps
-import numpy as np
+
 import webbrowser
 # Create your views here.
 
