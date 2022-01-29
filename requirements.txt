@@ -14,9 +14,6 @@ pathlib==1.0.1
 Pillow==5.0.0
 tensorflow==2.7.0
 numpy==1.14.5
-NEW
-
-noel060202 — Today at 11:36
 alabaster==0.7.12
 appdirs==1.4.4
 argh==0.26.2
