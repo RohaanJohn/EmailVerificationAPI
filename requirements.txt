@@ -67,7 +67,7 @@ pyparsing==2.4.7
 pyreadline==2.1
 python-dateutil==2.8.1
 pytz-deprecation-shim==0.1.0.post0
-pywin32==227
+
 pywin32-ctypes==0.2.0
 pywinpty==0.5.7
 PyYAML==5.3.1
