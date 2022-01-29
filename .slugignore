@@ -1,3 +1,5 @@
-purifynature/assets/
-purifynature/static/
-
+# Heres a comment
+*.js
+*.jpg
+/assets
+/static
