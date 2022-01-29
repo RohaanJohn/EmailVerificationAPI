@@ -1,5 +1,4 @@
 # Heres a comment
 *.js
 *.jpg
-/assets
 /static
