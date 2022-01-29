@@ -5,6 +5,7 @@ import smtplib
 import pandas as pd
 #from IPython.display import display, Javascript
 #from base64 import b64decode
+import numpy as np
 import tensorflow.keras
 from PIL import Image, ImageOps
 
@@ -95,9 +96,9 @@ def trashdetection(request):
                 
                     
                     
-                """
+                
                     # Disable scientific notation for clarity
-                    pd.set_printoptions(suppress=True)
+                    np.set_printoptions(suppress=True)
 
                     # Load the model
                     model = tensorflow.keras.models.load_model('C:\\Users\\acer\\Downloads\\keras_model (1).h5')
@@ -105,11 +106,11 @@ def trashdetection(request):
                     # Create the array of the right shape to feed into the keras model
                     # The 'length' or number of images you can put into the array is
                     # determined by the first position in the shape tuple, in this case 1.
-                    data = pd.ndarray(shape=(1, 224, 224, 3), dtype=np.float32)
+                    data = np.ndarray(shape=(1, 224, 224, 3), dtype=np.float32)
 
                     # Replace this with the path to your image
-                    #image = Image.open('C:\\Users\\acer\\Pictures\\Saved Pictures\\person 2.jpg')
-                    image = Image.open()
+                    image = Image.open('C:\\Users\\acer\\Pictures\\Saved Pictures\\person 2.jpg')
+                    
 
                     #resize the image to a 224x224 with the same strategy as in TM2:
                     #resizing the image to be at least 224x224 and then cropping from the center
@@ -117,7 +118,7 @@ def trashdetection(request):
                     image = ImageOps.fit(image, size, Image.ANTIALIAS)
 
                     #turn the image into a numpy array
-                    image_array = pd.asarray(image)
+                    image_array = np.asarray(image)
 
                     
 
@@ -140,7 +141,7 @@ def trashdetection(request):
                        webbrowser.open('https://akb-alphadebuggers-maps.glitch.me/')
                        return redirect('/')
                 
-    """
+    
     
  
 
