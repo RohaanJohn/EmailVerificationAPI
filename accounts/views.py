@@ -138,7 +138,7 @@ def trashdetection(request):
                       
                       return redirect('/')
                     else:
-                       return redirect('map')
+                       return render(request,'map.html')
                 
     
     
