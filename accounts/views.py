@@ -138,8 +138,7 @@ def trashdetection(request):
                       
                       return redirect('/')
                     else:
-                       webbrowser.open('https://akb-alphadebuggers-maps.glitch.me/')
-                       return redirect('/')
+                       return redirect('map')
                 
     
     
