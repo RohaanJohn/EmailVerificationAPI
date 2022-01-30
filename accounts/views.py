@@ -109,7 +109,7 @@ def trashdetection(request):
                     data = np.ndarray(shape=(1, 224, 224, 3), dtype=np.float32)
 
                     # Replace this with the path to your image
-                    image = Image.open('person 2.jpg')
+                    image = Image.open('trash1.jpg')
                     
 
                     #resize the image to a 224x224 with the same strategy as in TM2:
