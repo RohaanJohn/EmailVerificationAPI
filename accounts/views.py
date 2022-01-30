@@ -101,7 +101,7 @@ def trashdetection(request):
                     np.set_printoptions(suppress=True)
 
                     # Load the model
-                    model = tensorflow.keras.models.load_model('C:\\Users\\acer\\Downloads\\keras_model (1).h5')
+                    model = tensorflow.keras.models.load_model('keras_model (1).h5')
 
                     # Create the array of the right shape to feed into the keras model
                     # The 'length' or number of images you can put into the array is
@@ -109,7 +109,7 @@ def trashdetection(request):
                     data = np.ndarray(shape=(1, 224, 224, 3), dtype=np.float32)
 
                     # Replace this with the path to your image
-                    image = Image.open('C:\\Users\\acer\\Pictures\\Saved Pictures\\person 2.jpg')
+                    image = Image.open('person 2.jpg')
                     
 
                     #resize the image to a 224x224 with the same strategy as in TM2:
