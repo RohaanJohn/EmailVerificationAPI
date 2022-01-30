@@ -1,4 +1,7 @@
 # Heres a comment
 *.js
 *.jpg
+*.svg
+*.css
+*.html
 
