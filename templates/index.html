@@ -20,15 +20,36 @@ body {font-family: "Lato", sans-serif}
 <body>
 
 <!-- Navbar -->
+  
 <div class="w3-top">
   <div class="w3-bar w3-black w3-card">
+    <!--
     <a class="w3-bar-item w3-button w3-padding-large w3-hide-medium w3-hide-large w3-right" href="javascript:void(0)" onclick="myFunction()" title="Toggle Navigation Menu"><i class="fa fa-bars"></i></a>
     <a href="https://mainpag-3.glitch.me/#" class="w3-bar-item w3-button w3-padding-large">HOME</a>
     <a href="https://detector-pag3.glitch.me/" class="w3-bar-item w3-button w3-padding-large w3-hide-small">DETECTOR</a>
     <a href="https://c0ntactpag3.glitch.me/" class="w3-bar-item w3-button w3-padding-large w3-hide-small">CONTACT</a>
+    
    
       
     <a href="https://hom3-pag3.glitch.me/" class="w3-padding-large w3-hover-red w3-hide-small w3-right">LOGOUT</a>
+-->
+  <ul class="d-flex flex-row align-items-start justify-content-start">
+										<li class="active"><a href="index.html">Home</a></li>
+									        <li><a href="accounts/contact">Contact</a></li>
+                                                                                {% if user.is_authenticated %} 
+                                                                                <li>Hello, {{user.first_name}}</li>
+                                                                                <li><a href="accounts/logout">Logout</a></li>
+					                                        <li><a href="accounts/trashdetection">Trash Detection</a></li>
+                                                                                {% else %}
+
+
+                                                                                <li><a href="accounts/register">Register</a></li>  
+                                                                                <li><a href="accounts/login">Login</a></li>
+																			
+                                                                                {% endif %}
+                                                                                 
+
+									</ul>
   </div>
 </div>
 
