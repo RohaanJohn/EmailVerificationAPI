@@ -344,7 +344,9 @@ section
 	font-family: 'Oswald', sans-serif;
 	font-size: 16px;
 	font-weight: 400;
-	color: #FFFFFF;
+	/*color: #FFFFFF;*/
+	/*background-color: rgba(0,0,0,0);*/
+	color: rgba(0,0,0,0);
 	white-space: nowrap;
 }
 .header_phone
