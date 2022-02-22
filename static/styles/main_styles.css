@@ -393,7 +393,8 @@ section
 }
 .header_social ul li a i:hover
 {
-	color: rgba(255,255,255,0.5);
+	/*color: rgba(255,255,255,0.5);*/
+	color: #534A48;
 }
 .hamburger
 {
@@ -402,7 +403,9 @@ section
 .hamburger i
 {
 	font-size: 20px;
-	color: rgba(255,255,255,0.5);
+	/*color: rgba(255,255,255,0.5);*/
+	color: #534A48;
+	
 	cursor: pointer;
 	-webkit-transition: all 200ms ease;
 	-moz-transition: all 200ms ease;
@@ -412,7 +415,8 @@ section
 }
 .hamburger:hover i
 {
-	color: rgba(255,255,255,1);
+	/*color: rgba(255,255,255,1);*/
+	color: #534A48;
 }
 
 /*********************************
