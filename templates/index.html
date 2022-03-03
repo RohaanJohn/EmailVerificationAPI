@@ -23,18 +23,18 @@
 <div class="w3-bar w3-white w3-text-black">
   <h2 fontstyle="Sans" class="w3-left w3-tag w3-green w3-round">GREEN AND CLEAN<img width="100" height="100" src="https://cdn.glitch.global/a380af09-cbfb-42a4-bfda-6cffa4db648b/1643187802148.png?v=1643187868342" class="center"></h1>
   <h2 class="w3-left w3-tag w3-pale-red w3-round"></h2>
-  <a class="d-flex flex-row align-items-start justify-content-start">
-										<b class="active"><a href="/">Home</a></b>
-									        <b><a href="accounts/contact">Contact</a></b>
+ 
+										<a href="/" class="w3-hide-small w3-bar-item w3-button w3-mobile w3-large w3-right" style="margin-top:50px;">Home</a>
+									        <a href="accounts/contact" class="w3-hide-small w3-bar-item w3-button w3-mobile w3-large w3-right" style="margin-top:50px;">Contact</a>
                                                                                 {% if user.is_authenticated %} 
-                                                                                <b>Hello, {{user.first_name}}</b>
-                                                                                <b><a href="accounts/logout">Logout</a></b>
-					                                        <b><a href="accounts/trashdetection">Trash Detection</a></b>
+                                                                                <a class="w3-hide-small w3-bar-item w3-button w3-mobile w3-large w3-right" style="margin-top:50px;">Hello, {{user.first_name}}</a>
+                                                                                <a href="accounts/logout" class="w3-hide-small w3-bar-item w3-button w3-mobile w3-large w3-right" style="margin-top:50px;">Logout</a>
+					                                        <a href="accounts/trashdetection">Trash Detection</a>
                                                                                 {% else %}
 
 
-                                                                                <b><a href="accounts/register">Register</a></b>  
-                                                                                <b><a href="accounts/login">Login</a></b>
+                                                                                <a href="accounts/register" class="w3-hide-small w3-bar-item w3-button w3-mobile w3-large w3-right" style="margin-top:50px;">Register</a>
+                                                                                <a href="accounts/login" class="w3-hide-small w3-bar-item w3-button w3-mobile w3-large w3-right" style="margin-top:50px;">Login</a>
 																			
                                                                                 {% endif %}
                                                                                  
