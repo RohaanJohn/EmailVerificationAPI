@@ -1,61 +1,29 @@
-{% load static %}
-{% static "images" as baseUrl %}
 <!DOCTYPE html>
-<html lang="en">
-<head>
-  
-  
-<title>PurifyNature</title>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-  <link rel="icon" href="https://cdn.glitch.global/a380af09-cbfb-42a4-bfda-6cffa4db648b/1643187802148.png?v=1643187868342" />
-
-        <meta charset="utf-8">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<meta name="description" content="Travello template project">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<link rel="stylesheet" type="text/css" href="{% static 'styles/bootstrap4/bootstrap.min.css' %}">
-	<link href="{% static 'plugins/font-awesome-4.7.0/css/font-awesome.min.css' %}" rel="stylesheet" type="text/css">
-	<link rel="stylesheet" type="text/css" href="{% static 'plugins/OwlCarousel2-2.2.1/owl.carousel.css' %}">
-	<link rel="stylesheet" type="text/css" href="{% static 'plugins/OwlCarousel2-2.2.1/owl.theme.default.css' %}">
-	<link rel="stylesheet" type="text/css" href="{% static 'plugins/OwlCarousel2-2.2.1/animate.css' %}">
-	<link rel="stylesheet" type="text/css" href="{% static 'styles/main_styles.css' %}">
-	<link rel="stylesheet" type="text/css" href="{% static 'styles/responsive.css' %}">
-	
+<html>
+  <head>
+    <title>Purify Nature</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source Sans Pro">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <style>
+      html {
+      scroll-behavior: smooth;
+    }
+    h1,h2,h3,h4,h5,h6 {font-family: "Roboto"}
+    body {font-family: "Source Sans Pro"}
+    </style>
   </head>
-<style>
-body {font-family: "Lato", sans-serif}
-.mySlides {display: none}
-</style>
-<body>
+ 
+<body class="w3-light-white w3-margin left" style="background-color:green;">
 
-<!-- Navbar -->
-	<!--
-<div class="w3-top">
-  <div class="w3-bar w3-black w3-card">
-    <a class="w3-bar-item w3-button w3-padding-large w3-hide-medium w3-hide-large w3-right" href="javascript:void(0)" onclick="myFunction()" title="Toggle Navigation Menu"><i class="fa fa-bars"></i></a>
-    <a href="#" class="w3-bar-item w3-button w3-padding-large">HOME</a>
-    <a href="https://detector-pag3.glitch.me/" class="w3-bar-item w3-button w3-padding-large w3-hide-small">DETECTOR</a>
-    <a href="https://c0ntactpag3.glitch.me/" class="w3-bar-item w3-button w3-padding-large w3-hide-small">CONTACT</a>
-    
-    
-    <a href="https://hom3-pag3.glitch.me/" class="w3-padding-large w3-hover-red w3-hide-small w3-right">LOGOUT</a>
-
-  </div>
-</div>
--->
-	<header class="header">
-			<div class="container">
-				<div class="row">
-					<div class="col">
-						<div class="header_content d-flex flex-row align-items-center justify-content-start">
-							<div class="header_content_inner d-flex flex-row align-items-end justify-content-start">
-								<div class="logo"><a href="/">PurifyNature</a></div>
-								<nav class="main_nav">
-									<ul class="d-flex flex-row align-items-start justify-content-start">
+<!-- Navigation bar with links -->
+<div class="w3-bar w3-white w3-text-black">
+  <h2 fontstyle="Sans" class="w3-left w3-tag w3-green w3-round">GREEN AND CLEAN<img width="100" height="100" src="https://cdn.glitch.global/a380af09-cbfb-42a4-bfda-6cffa4db648b/1643187802148.png?v=1643187868342" class="center"></h1>
+  <h2 class="w3-left w3-tag w3-pale-red w3-round"></h2>
+  <a class="d-flex flex-row align-items-start justify-content-start">
 										<li class="active"><a href="/">Home</a></li>
 									        <li><a href="accounts/contact">Contact</a></li>
                                                                                 {% if user.is_authenticated %} 
@@ -71,157 +39,95 @@ body {font-family: "Lato", sans-serif}
                                                                                 {% endif %}
                                                                                  
 
-									</ul>
-								</nav>
-								<div class="header_phone ml-auto">Green & Clean</div>
-
-								<!-- Hamburger -->
-
-								<div class="hamburger ml-auto">
-									<i class="fa fa-bars" aria-hidden="true"></i>
-								</div>
-
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-			<div class="header_social d-flex flex-row align-items-center justify-content-start">
-				<ul class="d-flex flex-row align-items-start justify-content-start">
-					<li><a href="#"><i class="fa fa-pinterest" aria-hidden="true"></i></a></li>
-					<li><a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
-					<li><a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
-					<li><a href="#"><i class="fa fa-dribbble" aria-hidden="true"></i></a></li>
-					<li><a href="#"><i class="fa fa-behance" aria-hidden="true"></i></a></li>
-					<li><a href="#"><i class="fa fa-linkedin" aria-hidden="true"></i></a></li>
-				</ul>
-			</div>
-		</header>
-
-<!-- Navbar on small screens (remove the onclick attribute if you want the navbar to always show on top of the content when clicking on the links) -->
-<div id="navDemo" class="w3-bar-block w3-black w3-hide w3-hide-large w3-hide-medium w3-top" style="margin-top:46px">
-  <a href="#band" class="w3-bar-item w3-button w3-padding-large" onclick="myFunction()">HOME</a>
-  <a href="https://detector-pag3.glitch.me/" class="w3-bar-item w3-button w3-padding-large" onclick="myFunction()">DETECTOR</a>
-  <a href="https://c0ntactpag3.glitch.me/" class="w3-bar-item w3-button w3-padding-large" onclick="myFunction()">CONTACT</a>
-  <a href="https://hom3-pag3.glitch.me/" class="w3-padding-large w3-hover-red w3-hide-small w3-right">LOGOUT</a>
+									</a>
 </div>
 
-<!-- Page content -->
-<div class="w3-content" style="max-width:2000px;margin-top:46px">
+<div id="demo" class="w3-bar-block w3-white w3-hide w3-hide-large w3-small">
+ <B><a href="#Home"  class="w3-bar-item w3-button">HOME</a></B>
+<a href="#Contact" class="w3-bar-item w3-button">CONTACT</a>
+  <a href="#Activities" class="w3-bar-item w3-button">REGISTER</a>
+  <a href="#Contact" class="w3-bar-item w3-button">LOGIN</a>
+</div>
 
-<center><img 
- width="150" height="150"
- src="https://cdn.glitch.global/a380af09-cbfb-42a4-bfda-6cffa4db648b/1643187802148.png?v=1643187868342"
- class="center">
-  </center> 
+<!-- w3-content defines a container for fixed size centered content, 
+and is wrapped around the whole page content, except for the footer in this example -->
+<div class="w3-content" style="max-width:1600px">
+
+  <!-- Image header -->
+  <header class="w3-display-container w3-wide" style="padding-bottom:32px;" id="Home">
+    <img class="w3-image" src="https://media.istockphoto.com/photos/group-of-people-cleaning-nature-picture-id1143445679?k=20&m=1143445679&s=170667a&w=0&h=dL_rM-xH2MHCrufzfjhZgxlqLaBC1EBifw3-nIvjv-Q=" alt="Photo by Jamie Street" width="1600" height="1060">
+    <div class="w3-display-left w3-padding-large">
+     
+      <h1 fontstyle="" class="w3-left w3-tag w3-pale-green w3-round">Purify nature</h1>
+    </div>
+  </header>
+
+  <!-- Grid / Trainers section -->
   
 
 
-  <!-- The Band Section -->
-  <div class="w3-container w3-content w3-center w3-padding-64" style="max-width:800px" id="band">
-    <h2 class="w3-wide">ABOUT</h2>
+   <center>
+
+  
+
     
-    <p class="w3-justify">Waste management has always been a critical piece of the puzzle in protecting the environment and our health.
-    Unlike garbage companies of ancient times, where the city employed men to collect the garbage in carts and bury it, 
-    modern garbage service generally includes waste collection, transport, treatment, and proper disposal of waste materials.</p>
-    <div class="w3-row w3-padding-32">
-      
-    </div>
-  </div>
-  <center><img 
- width="250" height="250"
- src="https://cdn.glitch.global/96d11bbe-2bfe-46b4-aff8-0d5cbd3135f4/garbage%20bag%20final.jpg?v=1643534371252"
- class="center">
-  </center> 
- <br> <br> <br>
-   <!-- The Band Section -->
-  <div class="w3-container w3-content w3-center w3-padding-64" style="max-width:800px" id="band1">
-   
-    
-    <p class="w3-justify"> We all create waste, but few of us think about it, we don’t have to; once it’s in the bin, it’s dealt with.
-    Often we buy new things when we don’t need to, throw away things that still work, and simply dump food because we are full. 
-    But when you consider that a hairspray can take up to 500 years to decompose, it makes you wonder if all that waste is worth it.
-    However, since many of us don’t know the facts about waste removal and recycling, we don’t think about the effects.</p>
-    <div class="w3-row w3-padding-32">
-      
+      </div>
     </div>
   </div>
 
-  <br> <br> 
-  <center><img 
- width="500" height="400"
- src="https://cdn.glitch.global/96d11bbe-2bfe-46b4-aff8-0d5cbd3135f4/istockphoto-1139651150-612x612.jpg?v=1643535928223"
- class="center">
-  </center> 
-  <br> <br>
- <!-- The Band Section -->
-  <div class="w3-container w3-content w3-center w3-padding-64" style="max-width:800px" id="band2">
+<!-- Activities section -->
+  <div class="w3-white" id="Activities">
+    <div class="w3-container">
+      <div class="w3-center w3-padding-32">
+      <h2 class="w3-wide">INTRO</h2>
+      <p class="w3-opacity"><i>Clean and healthy nature</i></p><br>
+      <p class="w3-left-align w3-white w3-text-black">
+    Waste management has always been a critical piece of the puzzle in protecting the environment and our health. Unlike garbage companies of ancient times, where the city employed men to collect the garbage in carts and bury it, modern garbage service generally includes waste collection, transport, treatment, and proper disposal of waste materials
+      </p>
+      </div>
+<center>
+  <img width="500" height="400" src="https://cdn.glitch.global/96d11bbe-2bfe-46b4-aff8-0d5cbd3135f4/istockphoto-1139651150-612x612.jpg?v=1643535928223" class="center">
+  </center>
     
-    
-    <p class="w3-justify"> On average a typical family will throw away around 40kg of plastic that could be recycled each year. 
+        
+      </div>
+    </div>
+  </div>
+
+<!-- Contact -->
+<div class="w3-white" id="Contact">
+  <div class="w3-container w3-padding-32">
+    <div class="w3-center w3-padding-32">
+      
+<p class="w3-justify"> On average a typical family will throw away around 40kg of plastic that could be recycled each year. 
       That’s a hell of a lot of wasted plastic. 
 Over 7 million tons of food and drink are thrown away each year – it’s hard to even comprehend how much that actually is, but trust us, it’s a lot!
 Food waste from hotels, bars, and restaurants amounts to around £724 million each year due to wasted food. It is estimated that each year we generate
 3% more waste than the previous year. Considering we are supposed to be recycling more, this is pretty shocking.
 
 </p>
-    <div class="w3-row w3-padding-32">
-      
-    </div>
-  </div>  
+    
 
-
- 
-  
-<!-- End Page Content -->
-</div>
-
-<!-- Image of location/map -->
-<img src="/w3images/map.jpg" class="w3-image w3-greyscale-min" style="width:100%">
-
-<!-- Footer -->
-<footer class="w3-container w3-padding-64 w3-center w3-opacity w3-light-grey w3-xlarge">
-  <i class="fa fa-facebook-official w3-hover-opacity"></i>
-  <i class="fa fa-instagram w3-hover-opacity"></i>
-  <i class="fa fa-snapchat w3-hover-opacity"></i>
-  <i class="fa fa-pinterest-p w3-hover-opacity"></i>
-  <i class="fa fa-twitter w3-hover-opacity"></i>
-  <i class="fa fa-linkedin w3-hover-opacity"></i>
-  <p class="w3-medium">Powered by <a href="https://www.w3schools.com/w3css/default.asp" target="_blank">w3.css</a></p>
-</footer>
+  <!-- Footer. This section contains an ad for W3Schools Spaces. You can leave it to support us. -->
+  <footer class="w3-container w3-pale-red w3-center w3-margin-top">
+    <p>Find us on social media.</p>
+    <i class="fa fa-facebook-official w3-hover-opacity"></i>
+    <i class="fa fa-instagram w3-hover-opacity"></i>
+    <i class="fa fa-snapchat w3-hover-opacity"></i>
+    <i class="fa fa-pinterest-p w3-hover-opacity"></i>
+    <i class="fa fa-twitter w3-hover-opacity"></i>
+    <i class="fa fa-linkedin w3-hover-opacity"></i>
+    <p class="w3-small">This website was made with W3schools Spaces. Make your own free website today!</p>
+    <a class="w3-button w3-round-xxlarge w3-small w3-white w3-margin-bottom" href="https://www.w3schools.com/spaces" target="_blank">Start now</a> <!-- End footer -->
+  </footer>
 
 <script>
-// Automatic Slideshow - change image every 4 seconds
-var myIndex = 0;
-carousel();
-
-function carousel() {
-  var i;
-  var x = document.getElementsByClassName("mySlides");
-  for (i = 0; i < x.length; i++) {
-    x[i].style.display = "none";  
-  }
-  myIndex++;
-  if (myIndex > x.length) {myIndex = 1}    
-  x[myIndex-1].style.display = "block";  
-  setTimeout(carousel, 4000);    
-}
-
-// Used to toggle the menu on small screens when clicking on the menu button
 function myFunction() {
-  var x = document.getElementById("navDemo");
+  var x = document.getElementById("demo");
   if (x.className.indexOf("w3-show") == -1) {
     x.className += " w3-show";
   } else { 
     x.className = x.className.replace(" w3-show", "");
-  }
-}
-
-// When the user clicks anywhere outside of the modal, close it
-var modal = document.getElementById('ticketModal');
-window.onclick = function(event) {
-  if (event.target == modal) {
-    modal.style.display = "none";
   }
 }
 </script>
