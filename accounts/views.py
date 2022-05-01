@@ -96,8 +96,8 @@ def contact(request):
 def trashdetection(request):
                 
                if request.method== 'POST':
-                    #img = request.POST.get('file', False)
-                    img1 = request.POST['img1']
+                    img1 = request.POST.get('img1', False)
+                    #img1 = request.POST['img1']
                     # Disable scientific notation for clarity
                     np.set_printoptions(suppress=True)
 
