@@ -95,7 +95,7 @@ def contact(request):
         
 def trashdetection(request):
                 
-                    
+               if request.method== 'POST':
                     img  = request.POST['img']
                 
                     # Disable scientific notation for clarity
@@ -138,7 +138,10 @@ def trashdetection(request):
                     
                       
                       return redirect('/')
+                    # return render(request,'map.html')
                     else:
+                      
+                       return render(request,'trashdetection.html')
                        return render(request,'map.html')
                 
     
