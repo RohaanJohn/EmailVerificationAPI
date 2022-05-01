@@ -151,6 +151,8 @@ a {
       <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
    </head>
    <body>
+      <form action="trashdetection" method="post">
+     {% csrf_token %} 
       <div class="container">
          <div class="wrapper">
             <div class="image">
@@ -207,6 +209,7 @@ a {
          });
       </script>
  <button type="submit" class="registerbtn">Submit</button>
+         </form>
 <div>
         {% for message in messages %}
         <h3> {{message}} </h3>
