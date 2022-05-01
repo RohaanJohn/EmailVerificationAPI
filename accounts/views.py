@@ -96,7 +96,7 @@ def contact(request):
 def trashdetection(request):
                 
                if request.method== 'POST':
-                    img1 = request.POST.get('img1', False)
+                    myImage = request.POST.get('myImage', False)
                     #img1 = request.POST['img1']
                     # Disable scientific notation for clarity
                     np.set_printoptions(suppress=True)
@@ -111,7 +111,7 @@ def trashdetection(request):
 
                     # Replace this with the path to your image
                     # image = Image.open('trash1.jpg')
-                    image = Image.open(img1)
+                    image = Image.open(myImage)
 
                     #resize the image to a 224x224 with the same strategy as in TM2:
                     #resizing the image to be at least 224x224 and then cropping from the center
