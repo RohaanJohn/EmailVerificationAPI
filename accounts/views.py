@@ -139,7 +139,7 @@ def trashdetection(request):
                       
                       return redirect('/')
                     # return render(request,'map.html')
-                    else:
+               else:
                       
                        return render(request,'trashdetection.html')
                        return render(request,'map.html')
