@@ -159,7 +159,7 @@ hr {
    </head>
    <body>
       
-     {% csrf_token %} 
+  
       <div class="container">
          <div class="wrapper">
             <div class="image">
@@ -216,6 +216,7 @@ hr {
          });
       </script>
          <form action="trashdetection" method="post">
+            {% csrf_token %} 
  <button type="submit" class="registerbtn">Submit</button>
     </form>      
 <div>
