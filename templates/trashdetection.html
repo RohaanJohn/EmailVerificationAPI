@@ -5,11 +5,11 @@
 
 <h1>Upload Image</h1>
 
-<form action="trashdetection" method="post">
+<form action="trashdetection" method="post" enctype="multipart/form-data">
    {% csrf_token %} 
   <label for="img">Select image:</label>
   <input type="file" id="img" name="img" accept="image/*">
-  <input type="submit">
+  <button type="submit">Upload</button>
 </form>
 
  <div>
