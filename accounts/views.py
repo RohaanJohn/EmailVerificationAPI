@@ -97,7 +97,7 @@ def trashdetection(request):
                 
                if request.method== 'POST':
                     #img = request.POST.get('file', False)
-                     img1 = request.POST['img1']
+                    img1 = request.POST['img1']
                     # Disable scientific notation for clarity
                     np.set_printoptions(suppress=True)
 
@@ -110,7 +110,7 @@ def trashdetection(request):
                     data = np.ndarray(shape=(1, 224, 224, 3), dtype=np.float32)
 
                     # Replace this with the path to your image
-                 #   image = Image.open('trash1.jpg')
+                    # image = Image.open('trash1.jpg')
                     image = Image.open(img1)
 
                     #resize the image to a 224x224 with the same strategy as in TM2:
@@ -129,7 +129,7 @@ def trashdetection(request):
                     # Load the image into the array
                     data[0] = normalized_image_array
 
-                # run the inference
+                    # run the inference
                     prediction = model.predict(data)
                     print(prediction)
 
