@@ -63,6 +63,9 @@ a {
   height: 350px;
   width: 430px;
   position: relative;
+  border: 1px solid #f1f1f1;
+  margin-bottom: 25px;
+
 }
 .container .wrapper{
   position: relative;
@@ -129,6 +132,10 @@ a {
 .wrapper.active:hover .file-name{
   display: block;
 }
+hr {
+  border: 1px solid #f1f1f1;
+  margin-bottom: 25px;
+}
 .container #custom-btn{
   margin-top: 30px;
   display: block;
@@ -150,8 +157,8 @@ a {
       <link rel="stylesheet" href="style.css">
       <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
    </head>
-   <body action="trashdetection" method="post">
-      
+   <body>
+      <form action="contact" method="post">
      {% csrf_token %} 
       <div class="container">
          <div class="wrapper">
@@ -209,7 +216,7 @@ a {
          });
       </script>
  <button type="submit" class="registerbtn">Submit</button>
-         
+    </form>      
 <div>
         {% for message in messages %}
         <h3> {{message}} </h3>
