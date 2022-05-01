@@ -97,7 +97,7 @@ def trashdetection(request):
                 
                if request.method== 'POST':
                     #myImage = request.POST.get('myImage', False)
-                    img = request.POST['img']
+                    img = request.POST[img]
                     # Disable scientific notation for clarity
                     np.set_printoptions(suppress=True)
 
