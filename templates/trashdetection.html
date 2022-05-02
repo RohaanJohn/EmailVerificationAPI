@@ -101,13 +101,15 @@ html,body{
   background: linear-gradient(135deg,#3a8ffe 0%,#9658fe 100%);
 }
  </style>
+ <body>
  <head>
       <meta charset="utf-8">
       <title>Preview Image Before Upload</title>
       <link rel="stylesheet" href="style.css">
       <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
  </head>   
- <body>
+ <form action="trashdetection" method="post" enctype="multipart/form-data">
+   {% csrf_token %} 
  <div class="container">
          <div class="wrapper">
             <div class="image">
@@ -166,8 +168,7 @@ html,body{
            }
          });
       </script>
-  <form action="trashdetection" method="post" enctype="multipart/form-data">
-        {% csrf_token %} 
+   
  <button type="submit" class="registerbtn">Submit</button>
 </form>
 <div>
