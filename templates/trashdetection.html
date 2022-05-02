@@ -108,7 +108,7 @@ html,body{
       <link rel="stylesheet" href="style.css">
       <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
  </head>   
- 
+  <form2 aenctype="multipart/form-data">
    {% csrf_token %} 
  <div class="container">
          <div class="wrapper">
@@ -167,9 +167,10 @@ html,body{
            }
          });
       </script>
-   <form action="trashdetection" method="post" enctype="multipart/form-data">
+   <form1 action="trashdetection" method="post" enctype="multipart/form-data">
  <button type="submit" class="registerbtn">Submit</button>
-</form>
+</form1>
+</form2>
 <div>
         {% for message in messages %}
         <h3> {{message}} </h3>
