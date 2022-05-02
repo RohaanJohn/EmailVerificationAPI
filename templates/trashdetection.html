@@ -167,6 +167,7 @@ html,body{
          });
       </script>
   <form action="trashdetection" method="post" enctype="multipart/form-data">
+        {% csrf_token %} 
  <button type="submit" class="registerbtn">Submit</button>
 </form>
 <div>
