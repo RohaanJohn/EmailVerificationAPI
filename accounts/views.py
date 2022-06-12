@@ -71,19 +71,19 @@ def contact(request):
 
         s = smtplib.SMTP('smtp.gmail.com', 587) 
         s.starttls() 
-        s.login("thealphadebuggers@gmail.com", "alphadebuggers123456789")
+        s.login("rohaanrenujohn.b20cs1154@mbcet.ac.in", "rohaanrenujohn123")
         SUBJECT = "Travello"
         TEXT = f"Hi {username}! We will look into your message and send you a reply as soon as possible if needed. Thank you for using Travello!"
         message = 'Subject: {}\n\n{}'.format(SUBJECT, TEXT)
-        s.sendmail("thealphadebuggers@gmail.com", f"{email}", message)
+        s.sendmail("rohaanrenujohn.b20cs1154@mbcet.ac.in", f"{email}", message)
 
         s = smtplib.SMTP('smtp.gmail.com', 587) 
         s.starttls() 
-        s.login("thealphadebuggers@gmail.com", "alphadebuggers123456789")
+        s.login("rohaanrenujohn.b20cs1154@mbcet.ac.in", "rohaanrenujohn123")
         SUBJECT = "Contact"
         TEXT = f"Using the email address {email}, here is a message from {username}: {msg}"
         message = 'Subject: {}\n\n{}'.format(SUBJECT, TEXT)
-        s.sendmail("thealphadebuggers@gmail.com", "thealphadebuggers@gmail.com", message)
+        s.sendmail("rohaanrenujohn.b20cs1154@mbcet.ac.in", "rohaanrenujohn.b20cs1154@mbcet.ac.in", message)
 
         s.quit()
         
