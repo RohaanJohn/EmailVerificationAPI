@@ -21,8 +21,9 @@ def login(request):
             auth.login(request, user)
             return redirect("/")
         else:
-            return render(request,'login.html')
+            #return render(request,'login.html')
             messages.info(request, 'invalid credentials')
+            return render(request,'login.html')
 
     else:
         return render(request,'login.html')
