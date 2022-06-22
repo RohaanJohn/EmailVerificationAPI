@@ -23,25 +23,25 @@
 <!-- Navigation bar with links -->
 <div class="w3-bar w3-white w3-text-black">
   <!--<h2 fontstyle="Sans" class="w3-left w3-tag w3-green w3-round">PurifyNature<img width="80" height="80" src="https://cdn.glitch.global/a380af09-cbfb-42a4-bfda-6cffa4db648b/1643187802148.png?v=1643187868342" class="center"></h1>-->
-  <h2 fontstyle="Sans" class="w3-left w3-tag w3-green w3-round"><a href="/"><img width="100" height="100" src="https://cdn.glitch.global/a380af09-cbfb-42a4-bfda-6cffa4db648b/1643187802148.png?v=1643187868342">PurifyNature</a></h2>	
+  <h2 fontstyle="Sans" class="w3-left w3-tag w3-green w3-round"><a href="/" style="text-decoration:none"><img width="100" height="100" src="https://cdn.glitch.global/a380af09-cbfb-42a4-bfda-6cffa4db648b/1643187802148.png?v=1643187868342">PurifyNature</a></h2>	
   <h2 class="w3-left w3-tag w3-pale-red w3-round"></h2>
  
 										<!--<a href="/" class="w3-hide-small w3-bar-item w3-button w3-mobile w3-large w3-right" style="margin-top:50px;">Home</a>
 									        <a href="accounts/contact" class="w3-hide-small w3-bar-item w3-button w3-mobile w3-large w3-right" style="margin-top:50px;">Contact</a>-->
                                                                                 {% if user.is_authenticated %} 
-                                                                                 <a href="accounts/logout" class="w3-hide-small w3-bar-item w3-button w3-mobile w3-large w3-right" style="margin-top:30px; margin-right:20px;">Logout</a>
-                                                                                 <a href="accounts/contact" class="w3-hide-small w3-bar-item w3-button w3-mobile w3-large w3-right" style="margin-top:30px;">Contact</a>
-                                                                                  <a href="accounts/trashdetection" class="w3-hide-small w3-bar-item w3-button w3-mobile w3-large w3-right" style="margin-top:30px;">Pinpoint</a>
-                                                                                <a href="https://aboutpurifynature.glitch.me" class="w3-hide-small w3-bar-item w3-button w3-mobile w3-large w3-right" style="margin-top:30px;">Hello, {{user.first_name}}</a>
+                                                                                 <a href="accounts/logout" class="w3-hide-small w3-bar-item w3-button w3-mobile w3-large w3-right" style="margin-top:40px; margin-right:20px;">Logout</a>
+                                                                                 <a href="accounts/contact" class="w3-hide-small w3-bar-item w3-button w3-mobile w3-large w3-right" style="margin-top:40px;">Contact</a>
+                                                                                  <a href="accounts/trashdetection" class="w3-hide-small w3-bar-item w3-button w3-mobile w3-large w3-right" style="margin-top:40px;">Pinpoint</a>
+                                                                                <a href="https://aboutpurifynature.glitch.me" class="w3-hide-small w3-bar-item w3-button w3-mobile w3-large w3-right" style="margin-top:40px;">Hello, {{user.first_name}}</a>
                                                                                  
 	                                                                         
                                                                                   
                                                                                 {% else %}
                                                                                  
-                                                                                 <a href="accounts/login" class="w3-hide-small w3-bar-item w3-button w3-mobile w3-large w3-right" style="margin-top:30px; margin-right:20px;">Login</a>
-                                                                                <a href="accounts/register" class="w3-hide-small w3-bar-item w3-button w3-mobile w3-large w3-right" style="margin-top:30px;">Register</a>
-										<a href="accounts/contact" class="w3-hide-small w3-bar-item w3-button w3-mobile w3-large w3-right" style="margin-top:30px;">Contact</a>	
-								                 <a href="https://aboutpurifynature.glitch.me" class="w3-hide-small w3-bar-item w3-button w3-mobile w3-large w3-right" style="margin-top:30px;">About</a>
+                                                                                 <a href="accounts/login" class="w3-hide-small w3-bar-item w3-button w3-mobile w3-large w3-right" style="margin-top:40px; margin-right:20px;">Login</a>
+                                                                                <a href="accounts/register" class="w3-hide-small w3-bar-item w3-button w3-mobile w3-large w3-right" style="margin-top:40px;">Register</a>
+										<a href="accounts/contact" class="w3-hide-small w3-bar-item w3-button w3-mobile w3-large w3-right" style="margin-top:40px;">Contact</a>	
+								                 <a href="https://aboutpurifynature.glitch.me" class="w3-hide-small w3-bar-item w3-button w3-mobile w3-large w3-right" style="margin-top:40px;">About</a>
                                                                                 {% endif %}
                                                                                  
 
