@@ -136,9 +136,11 @@ def trashdetection(request):
 
                     # condition checking
                     if prediction[0][1] > prediction[0][0]:
-                      return redirect('/')
+                      answer = "clean"
                     else: 
-                      return render(request,'map.html')
+                      answer = "clean"
+                    d['output'] = answer
+                    return d
                else:
                       
                        return render(request,'trashdetection.html')
