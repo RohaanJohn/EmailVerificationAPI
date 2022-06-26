@@ -138,7 +138,8 @@ def trashdetection(request):
                     else: 
                       answer = "trash"
                     d['output'] = answer
-                    return d
+                    #return d
+                    return render(request,'trashorclean.html')
                else:
                       
                        return render(request,'trashdetection.html')
