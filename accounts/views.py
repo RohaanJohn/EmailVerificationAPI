@@ -138,8 +138,10 @@ def trashdetection(request):
                     else: 
                       answer = "trash"
                     d['output'] = answer
-                    return d
-                    return redirect("accounts/trashorclean")
+                    #return d
+                    #return redirect("accounts/trashorclean")
+                    messages.info(request,d)
+
                else:
                       
                        return render(request,'trashdetection.html')
