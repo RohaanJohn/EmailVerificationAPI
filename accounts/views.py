@@ -138,7 +138,7 @@ def trashdetection(request):
                     else: 
                       answer = "trash"
                     d['output'] = answer
-                    #return d
+                    return d
                     return redirect("https://purifynature.herokuapp.com/accounts/trashorclean")
                else:
                       
