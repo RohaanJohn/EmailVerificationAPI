@@ -120,8 +120,6 @@ def trashdetection(request):
                     #turn the image into a numpy array
                     image_array = np.asarray(image)
 
-                    
-
                     # Normalize the image
                     normalized_image_array = (image_array.astype(np.float32) / 127.0) - 1
 
@@ -134,19 +132,14 @@ def trashdetection(request):
 
                     # condition checking
                     if prediction[0][1] > prediction[0][0]:
-                      #answer = "clean"
                       d.update({"output":"clean"})
                     else: 
-                      #answer = "trash"
                       d.update({"output":"trash"})
-                    #d["output"] = answer
-                    #return d
-                    #return redirect("accounts/trashorclean")
                     messages.info(request, f"{d}")
-                    print(d)
+                    
 
                else:
-                 return render(request,'trashdetection.html')
+               return render(request,'trashdetection.html')
 
 def trashorclean(request):
   return render(request, 'trashorclean.html')
