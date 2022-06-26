@@ -94,7 +94,7 @@ def contact(request):
 def trashdetection(request):
                 
                if request.method== 'POST':
-                    d = {}
+                    data = {}
                    
                     img = request.FILES['img']
                     # Disable scientific notation for clarity
@@ -137,10 +137,10 @@ def trashdetection(request):
                       answer = "clean"
                     else: 
                       answer = "trash"
-                    d['output'] = answer
-                    #return d
+                    data["output"] = answer
+                    return data
                     #return redirect("accounts/trashorclean")
-                    messages.info(request,d)
+                    messages.info(request,data)
 
                else:
                       
