@@ -146,8 +146,7 @@ def trashdetection(request):
                     print(d)
 
                else:
-                      
-                       return render(request,'trashdetection.html')
+                 return render(request,'trashdetection.html')
 
 def trashorclean(request):
   return render(request, 'trashorclean.html')
