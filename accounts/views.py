@@ -135,7 +135,7 @@ def trashdetection(request):
                     if prediction[0][1] > prediction[0][0]:
                       answer = "clean"
                     else: 
-                      answer = "clean"
+                      answer = "trash"
                     d['output'] = answer
                     return d
                else:
