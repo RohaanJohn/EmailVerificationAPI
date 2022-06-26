@@ -137,10 +137,10 @@ def trashdetection(request):
                       answer = "clean"
                     else: 
                       answer = "trash"
-                   d["output"] = answer
-                   return d
-                   #return redirect("accounts/trashorclean")
-                   messages.info(request, d)
+                    d["output"] = answer
+                    return d
+                    #return redirect("accounts/trashorclean")
+                    messages.info(request, d)
 
                else:
                       
