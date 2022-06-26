@@ -139,10 +139,13 @@ def trashdetection(request):
                       answer = "trash"
                     d['output'] = answer
                     #return d
-                    return render(request,'trashorclean.html')
+                    return redirect("/accounts/trashorclean")
                else:
                       
                        return render(request,'trashdetection.html')
+
+def trashorclean(request):
+  return render(request, 'trashorclean.html')
                       
                 
     
