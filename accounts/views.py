@@ -142,7 +142,7 @@ def trashdetection(request):
                     #d["output"] = answer
                     return d
                     #return redirect("accounts/trashorclean")
-                    messages.info(request, d)
+                    messages.info(request, f'{d}')
 
                else:
                       
