@@ -94,7 +94,7 @@ def contact(request):
 def trashdetection(request):
                 
                if request.method== 'POST':
-                    d = {}
+                    d = []
                    
                     img = request.FILES['img']
                     # Disable scientific notation for clarity
