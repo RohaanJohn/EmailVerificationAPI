@@ -140,7 +140,7 @@ def trashdetection(request):
                       d.update({"output":"Happy"})
                     messages.info(request, f"{d}")
                     return render(request,'trashorclean.html')
-               else:
+              else:
                 return render(request,'trashdetection.html')
 
 def trashorclean(request):
