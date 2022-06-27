@@ -92,7 +92,7 @@ def contact(request):
   else:
         return render(request,'contact.html')
 #@api_view(['GET'])       
-def trashdetection(request):
+def emotionanalysis(request):
                 
               if request.method== 'POST':
                     d = {}
@@ -139,13 +139,13 @@ def trashdetection(request):
                     else:
                       d.update({"output":"Happy"})
                     messages.info(request, f"{d}")
-                    return render(request,'trashorclean.html')
+                    return render(request,'emotion.html')
               else:
-                return render(request,'trashdetection.html')
+                return render(request,'emotionanalysis.html')
 
-def trashorclean(request):
+def emotion(request):
   #messages.info(request, f"{d}")
-  return render(request, 'trashorclean.html')
+  return render(request, 'emotion.html')
                       
                 
     
