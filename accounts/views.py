@@ -94,8 +94,7 @@ def contact(request):
 #@api_view(['GET'])       
 def trashdetection(request):
                 
-               if request.method== 'POST':
-                 try:
+              if request.method== 'POST':
                     d = {}
                    
                     img = request.FILES['img']
@@ -103,7 +102,7 @@ def trashdetection(request):
                     np.set_printoptions(suppress=True)
 
                     # Load the model
-                    model = tensorflow.keras.models.load_model('keras_model (1).h5')
+                    model = tensorflow.keras.models.load_model('keras_model3.h5')
 
                     # Create the array of the right shape to feed into the keras model
                     # The 'length' or number of images you can put into the array is
@@ -130,21 +129,17 @@ def trashdetection(request):
 
                     # run the inference
                     prediction = model.predict(data)
-                    print(prediction)
+                    #print(prediction)
 
                     # condition checking
-                    if prediction[0][1] > prediction[0][0]:
-                      d.update({"output":"clean"})
-                    else: 
-                      d.update({"output":"trash"})
+                    if ((prediction[0][1] > prediction[0][0]) & (prediction[0][1] > prediction[0][2])):
+                      d.update({"output":"Angry"})
+                    elif ((prediction[0][2] > prediction[0][0]) & (prediction[0][2] > prediction[0][1])):
+                      d.update({"output":"Sad"})
+                    else:
+                      d.update({"output":"Happy"})
                     messages.info(request, f"{d}")
                     return render(request,'trashorclean.html')
-                 except exceptions.ValueError:
-                   messages.info(request, 'Invalid image. Please try again with another image.')
-                   return render(request,'trashdetection.html')
-                 except exceptions.MultiValueDictKeyError:
-                   messages.info(request, 'Invalid image. Please try again with another image.')
-                   return render(request,'trashdetection.html')
                else:
                 return render(request,'trashdetection.html')
 
