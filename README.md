@@ -1,1 +1,1 @@
-https://purifynatureapi.herokuapp.com/accounts/trashdetection
+https://emotionanalysisapi.herokuapp.com/accounts/emotionanalysis
