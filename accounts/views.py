@@ -94,6 +94,7 @@ def contact(request):
 def trashdetection(request):
                 
                if request.method== 'POST':
+                 try:
                     d = {}
                    
                     img = request.FILES['img']
@@ -137,6 +138,12 @@ def trashdetection(request):
                       d.update({"output":"trash"})
                     messages.info(request, f"{d}")
                     return render(request,'trashorclean.html')
+                 except ValueError:
+                   messages.info(request, 'Invalid image. Please try again with another image.')
+                   return render(request,'trashdetection.html')
+                 except MultiValueDictKeyError:
+                   messages.info(request, 'Invalid image. Please try again with another image.')
+                   return render(request,'trashdetection.html')
                else:
                 return render(request,'trashdetection.html')
 
