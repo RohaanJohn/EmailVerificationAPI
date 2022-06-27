@@ -24,7 +24,8 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-*joz_2y(hcz0q9f4@2miit43c_n9c+7353ij^=gb2yhidar0na'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = os.getenv('DEBUG', False) == 'True'
+#DEBUG = False
 #DEBUG = True
 
 ALLOWED_HOSTS = ['purifynature.herokuapp.com']
