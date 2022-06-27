@@ -7,6 +7,7 @@ import tensorflow.keras
 from PIL import Image, ImageOps
 import webbrowser
 from rest_framework.decorators import api_view
+from django.core import exceptions, validators
 # Create your views here.
 
 def login(request):
@@ -138,10 +139,10 @@ def trashdetection(request):
                       d.update({"output":"trash"})
                     messages.info(request, f"{d}")
                     return render(request,'trashorclean.html')
-                 except ValueError:
+                 except exceptions.ValueError:
                    messages.info(request, 'Invalid image. Please try again with another image.')
                    return render(request,'trashdetection.html')
-                 except MultiValueDictKeyError:
+                 except exceptions.MultiValueDictKeyError:
                    messages.info(request, 'Invalid image. Please try again with another image.')
                    return render(request,'trashdetection.html')
                else:
