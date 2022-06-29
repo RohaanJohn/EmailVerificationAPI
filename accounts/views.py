@@ -132,9 +132,9 @@ def emotionanalysis(request):
                     #print(prediction)
 
                     # condition checking
-                    if ((prediction[0][1] > prediction[0][0]) & (prediction[0][1] > prediction[0][2])):
-                      d.update({"output":"Angry"})
-                    elif ((prediction[0][2] > prediction[0][0]) & (prediction[0][2] > prediction[0][1])):
+                    if ((prediction[0][0] > prediction[0][1]) & (prediction[0][0] > prediction[0][2])):
+                      d.update({"output":"Angry})
+                    elif ((prediction[0][1] > prediction[0][0]) & (prediction[0][1] > prediction[0][2])):
                       d.update({"output":"Sad"})
                     else:
                       d.update({"output":"Happy"})
@@ -142,6 +142,7 @@ def emotionanalysis(request):
                     return render(request,'emotion.html')
               else:
                 return render(request,'emotionanalysis.html')
+   # [(0 is Angry), (1 is Sad), (2 is Happy)]
 
 def emotion(request):
   #messages.info(request, f"{d}")
