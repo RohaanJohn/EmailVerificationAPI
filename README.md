@@ -1,1 +1,1 @@
-https://emotionanalysisapi.herokuapp.com/accounts/emotionanalysis
+https://emotionanalysisapi376.herokuapp.com/accounts/emotionanalysis
