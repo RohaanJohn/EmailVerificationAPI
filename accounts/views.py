@@ -133,7 +133,7 @@ def emotionanalysis(request):
 
                     # condition checking
                     if ((prediction[0][0] > prediction[0][1]) & (prediction[0][0] > prediction[0][2])):
-                      d.update({"output":"Angry})
+                      d.update({"output":"Angry"})
                     elif ((prediction[0][1] > prediction[0][0]) & (prediction[0][1] > prediction[0][2])):
                       d.update({"output":"Sad"})
                     else:
