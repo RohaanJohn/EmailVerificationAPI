@@ -96,7 +96,7 @@ def contact(request):
 def emotionanalysis(request):
                 
               if request.method== 'POST':
-                    d = {}
+                    #d = {}
                    
                     img = request.FILES['img']
                     # Disable scientific notation for clarity
@@ -134,13 +134,16 @@ def emotionanalysis(request):
 
                     # condition checking
                     if ((prediction[0][0] > prediction[0][1]) & (prediction[0][0] > prediction[0][2])):
-                      d.update({"output":"Angry"})
+                      #d.update({"output":"Angry"})
+                      return Response({"output":"Angry"})
                     elif ((prediction[0][1] > prediction[0][0]) & (prediction[0][1] > prediction[0][2])):
-                      d.update({"output":"Sad"})
+                      #d.update({"output":"Sad"})
+                      return Response({"output":"Sad"})
                     else:
-                      d.update({"output":"Happy"})
+                      #d.update({"output":"Happy"})
+                      return Response({"output":"Happy"})
                     #messages.info(request, f"{d}")
-                    return Response(f"{d}")
+                    #return Response(f"{d}")
                     #return render(request,'emotion.html')
               else:
                 return render(request,'emotionanalysis.html')
