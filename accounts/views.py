@@ -91,7 +91,9 @@ def contact(request):
         return redirect('/')
   else:
         return render(request,'contact.html')
-#@api_view(['GET'])       
+@api_view(['POST'])
+@permission_classes([AllowAny,])
+@csrf_exempt      
 def emotionanalysis(request):
                 
               if request.method== 'POST':
