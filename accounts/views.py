@@ -8,6 +8,7 @@ from PIL import Image, ImageOps
 import webbrowser
 from rest_framework.decorators import api_view
 from django.core import exceptions, validators
+from rest_framework.response import Response
 # Create your views here.
 
 def login(request):
@@ -91,7 +92,7 @@ def contact(request):
         return redirect('/')
   else:
         return render(request,'contact.html')
-#@api_view(['POST'])
+@api_view(['POST'])
 def emotionanalysis(request):
                 
               if request.method== 'POST':
@@ -138,8 +139,9 @@ def emotionanalysis(request):
                       d.update({"output":"Sad"})
                     else:
                       d.update({"output":"Happy"})
-                    messages.info(request, f"{d}")
-                    return render(request,'emotion.html')
+                    #messages.info(request, f"{d}")
+                    return Response(f"{d}")
+                    #return render(request,'emotion.html')
               else:
                 return render(request,'emotionanalysis.html')
    # [(0 is Angry), (1 is Sad), (2 is Happy)]
