@@ -92,7 +92,6 @@ def contact(request):
   else:
         return render(request,'contact.html')
 @api_view(['POST'])
-@permission_classes([AllowAny,])
 @csrf_exempt      
 def emotionanalysis(request):
                 
