@@ -91,7 +91,7 @@ def contact(request):
         return redirect('/')
   else:
         return render(request,'contact.html')
-@api_view(['POST'])
+#@api_view(['POST'])
 def emotionanalysis(request):
                 
               if request.method== 'POST':
