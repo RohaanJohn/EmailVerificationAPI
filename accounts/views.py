@@ -93,7 +93,7 @@ def contact(request):
   else:
         return render(request,'contact.html')
 @api_view(['GET', 'POST'])
-def emotionanalysis(request):
+def emotionAnalysis(request):
                 
               if request.method== 'POST':
                     #d = {}
