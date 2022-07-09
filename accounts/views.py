@@ -92,7 +92,7 @@ def contact(request):
         return redirect('/')
   else:
         return render(request,'contact.html')
-@CrossOrigin(maxAge = 3600)
+
 @RestController
 @api_view(['GET', 'POST'])
 def emotionAnalysis(request):
