@@ -136,17 +136,17 @@ def emotionAnalysis(request):
 
                     # condition checking
                    if ((prediction[0][3] > prediction[0][0]) & (prediction[0][3] > prediction[0][1]) & (prediction[0][3] > prediction[0][2])):
-                      return Response({"output":"Sad"})
-                   elif ((prediction[0][2] > prediction[0][0]) & (prediction[0][2] > prediction[0][1]) & (prediction[0][2] > prediction[0][3])):
-                      return Response({"output":"Angry"})
-                   elif ((prediction[0][1] > prediction[0][0]) & (prediction[0][1] > prediction[0][2]) & (prediction[0][1] > prediction[0][3])):
                       return Response({"output":"Fear"})
+                   elif ((prediction[0][2] > prediction[0][0]) & (prediction[0][2] > prediction[0][1]) & (prediction[0][2] > prediction[0][3])):
+                      return Response({"output":"Sad"})
+                   elif ((prediction[0][1] > prediction[0][0]) & (prediction[0][1] > prediction[0][2]) & (prediction[0][1] > prediction[0][3])):
+                      return Response({"output":"Angry"})
                    else: #that is if angry
                       return Response({"output":"Happy"})
 
               else:
                 return render(request,'emotionanalysis.html')
-   # [(0 is Angry), (1 is Sad), (2 is Happy)]
+   # [(0 is Happy), (1 is Angry), (2 is Sad), (3 is Fear)]
 
 def emotion(request):
   #messages.info(request, f"{d}")
