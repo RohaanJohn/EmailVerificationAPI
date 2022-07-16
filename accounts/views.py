@@ -135,13 +135,13 @@ def emotionAnalysis(request):
                     #print(prediction)
 
                     # condition checking
-                   if ((prediction[0][3] > prediction[0][0]) & (prediction[0][3] > prediction[0][1]) & (prediction[0][3] > prediction[0][2])):
+                    if ((prediction[0][3] > prediction[0][0]) & (prediction[0][3] > prediction[0][1]) & (prediction[0][3] > prediction[0][2])):
                       return Response({"output":"Fear"})
-                   elif ((prediction[0][2] > prediction[0][0]) & (prediction[0][2] > prediction[0][1]) & (prediction[0][2] > prediction[0][3])):
+                    elif ((prediction[0][2] > prediction[0][0]) & (prediction[0][2] > prediction[0][1]) & (prediction[0][2] > prediction[0][3])):
                       return Response({"output":"Sad"})
-                   elif ((prediction[0][1] > prediction[0][0]) & (prediction[0][1] > prediction[0][2]) & (prediction[0][1] > prediction[0][3])):
+                    elif ((prediction[0][1] > prediction[0][0]) & (prediction[0][1] > prediction[0][2]) & (prediction[0][1] > prediction[0][3])):
                       return Response({"output":"Angry"})
-                   else: #that is if angry
+                    else: #that is if angry
                       return Response({"output":"Happy"})
 
               else:
