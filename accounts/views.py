@@ -105,7 +105,7 @@ def emotionAnalysis(request):
                     np.set_printoptions(suppress=True)
 
                     # Load the model
-                    model = tensorflow.keras.models.load_model('keras_model.h5')
+                    model = tensorflow.keras.models.load_model('keras_model2.h5')
 
                     # Create the array of the right shape to feed into the keras model
                     # The 'length' or number of images you can put into the array is
@@ -135,18 +135,15 @@ def emotionAnalysis(request):
                     #print(prediction)
 
                     # condition checking
-                    if ((prediction[0][0] > prediction[0][1]) & (prediction[0][0] > prediction[0][2])):
-                      #d.update({"output":"Angry"})
-                      return Response({"output":"Angry"})
-                    elif ((prediction[0][1] > prediction[0][0]) & (prediction[0][1] > prediction[0][2])):
-                      #d.update({"output":"Sad"})
+                   if ((prediction[0][3] > prediction[0][0]) & (prediction[0][3] > prediction[0][1]) & (prediction[0][3] > prediction[0][2])):
                       return Response({"output":"Sad"})
-                    else:
-                      #d.update({"output":"Happy"})
+                   elif ((prediction[0][2] > prediction[0][0]) & (prediction[0][2] > prediction[0][1]) & (prediction[0][2] > prediction[0][3])):
+                      return Response({"output":"Angry"})
+                   elif ((prediction[0][1] > prediction[0][0]) & (prediction[0][1] > prediction[0][2]) & (prediction[0][1] > prediction[0][3])):
+                      return Response({"output":"Fear"})
+                   else: #that is if angry
                       return Response({"output":"Happy"})
-                    #messages.info(request, f"{d}")
-                    #return Response(f"{d}")
-                    #return render(request,'emotion.html')
+
               else:
                 return render(request,'emotionanalysis.html')
    # [(0 is Angry), (1 is Sad), (2 is Happy)]
