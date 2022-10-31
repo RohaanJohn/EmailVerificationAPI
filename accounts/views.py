@@ -7,7 +7,13 @@ from rest_framework.response import Response
 import smtplib
 import requests
 import json
+from github import Github
+import os
+import os.path
 
+BASE_DIR = Path(__file__).resolve().parent.parent
+g = Github("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")
+repo = g.get_repo("RohaanJohn/DhwaniAPI")
 # Create your views here.
 
 def login(request):
@@ -97,18 +103,27 @@ def contact(request):
 def predict(request):
                 
               if request.method== 'POST':
-                     #pic_url = request.FILES['str1']
-                     pic_url = '/content/drive/MyDrive/Fear.jpg'
-                     #pic_url = '/content/drive/MyDrive/inputpics/randompic.jpg'
-                     url = 'http://d1a7-34-125-161-199.ngrok.io/predict'
-                     input_data_for_model = {
+                    img = request.FILES['img']
+                    test = []
+                    final_image = Image.open(img)
+                    temp_image = final_image 
+                    buf = BytesIO()
+                    temp_image.save(buf, 'jpeg')
+                    buf.seek(0)
+                    image_bytes = buf.read()
+                    buf.close()
+                    string = base64.b64encode(image_bytes)
+                    repo.create_file(f'FinalImage/FinalImage.jpg', "commit", base64.b64decode(string))
+                    pic_url = 'FinalImage/FinalImage.jpg'
+                    url = 'http://d1a7-34-125-161-199.ngrok.io/predict'
+                    input_data_for_model = {
                       'str1' : pic_url
-                     }
-                     input_json  = json.dumps(input_data_for_model)
-                     result = requests.post(url, data=input_json)
-                     the_output = result.text
-                     the_result = the_output.replace('"','')
-                     return Response({"output":the_result})
+                    }
+                    input_json  = json.dumps(input_data_for_model)
+                    result = requests.post(url, data=input_json)
+                    the_output = result.text
+                    the_result = the_output.replace('"','')
+                    return Response({"output":the_result})
                        
               else:
                 return render(request,'emotion.html')
