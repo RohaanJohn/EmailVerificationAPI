@@ -1,1 +1,1 @@
-https://thedhwaniapp.herokuapp.com/accounts/predict
+https://thedhwaniapi.herokuapp.com/accounts/predict
