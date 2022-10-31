@@ -107,6 +107,8 @@ def predict(request):
                      input_json  = json.dumps(input_data_for_model)
                      result = requests.post(url, data=input_json)
                      the_result = result.text
+                     the_result.replace(" " ", "")
+                     the_result.replace("\","")                   
                      return Response({"output":the_result})
 
               else:
