@@ -115,7 +115,7 @@ def predict(request):
                     string = base64.b64encode(image_bytes)
                     repo.create_file('FinalImage/FinalImage.jpg', "commit", base64.b64decode(string))
                     pic_url = 'FinalImage/FinalImage.jpg'
-                    url = 'http://d1a7-34-125-161-199.ngrok.io/predict'
+                    url = 'http://a396-34-125-161-199.ngrok.io/predict'
                     input_data_for_model = {
                       'str1' : pic_url
                     }
