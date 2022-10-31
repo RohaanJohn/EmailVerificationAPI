@@ -12,3 +12,4 @@ whitenoise==5.2.0
 jinja2==2.11.2
 pathlib==1.0.1
 django-cors-headers==3.10.1
+requests==2.28.1
