@@ -8,6 +8,7 @@ import webbrowser
 from rest_framework.decorators import api_view
 from django.core import exceptions, validators
 from rest_framework.response import Response
+import requests
 # Create your views here.
 
 def login(request):
@@ -100,7 +101,7 @@ def predict(request):
                  test = []
                  img = request.FILES['img']
                  url = 'http://6af2-35-185-41-173.ngrok.io/predict'
-                 result = requests.post(url, data=img)
+                 result = request.POST(url, data=img)
                  the_output = result.text
                  the_result = the_output.replace('"','')
                  return Response({"output":the_result})
