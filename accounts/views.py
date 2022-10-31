@@ -106,7 +106,7 @@ def predict(request):
                      }
                      input_json  = json.dumps(input_data_for_model)
                      result = requests.post(url, data=input_json)
-                     return Response({"output":result.txt})
+                     return Response({"output":result.text})
 
               else:
                 return render(request,'emotion.html')
