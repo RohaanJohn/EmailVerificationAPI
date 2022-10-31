@@ -1,13 +1,14 @@
 from django.shortcuts import render, redirect
 from django.contrib.auth.models import User, auth
 from django.contrib import messages
+import smtplib
+import numpy as np
+import tensorflow.keras
+from PIL import Image, ImageOps
+import webbrowser
 from rest_framework.decorators import api_view
 from django.core import exceptions, validators
 from rest_framework.response import Response
-import smtplib
-import requests
-import json
-
 # Create your views here.
 
 def login(request):
@@ -94,27 +95,23 @@ def contact(request):
 
 
 @api_view(['GET', 'POST'])
-def predict(request):
+def emotionAnalysis(request):
                 
               if request.method== 'POST':
-                     #pic_url = request.FILES['str1']
-                     pic_url = '/content/drive/MyDrive/Fear.jpg'
-                     #pic_url = '/content/drive/MyDrive/inputpics/randompic.jpg'
-                     url = 'http://0cff-34-86-209-236.ngrok.io/predict'
-                     input_data_for_model = {
-                      'str1' : pic_url
-                     }
-                     input_json  = json.dumps(input_data_for_model)
-                     result = requests.post(url, data=input_json)
-                     the_output = result.text
-                     the_result = the_output.replace('"','')
-                     return Response({"output":the_result})
-                       
+                 test = []
+                 img = request.FILES['img']
+                 url = 'http://d7d7-34-86-209-236.ngrok.io/predict'
+                 result = requests.post(url, data=img)
+                 the_output = result.text
+                 the_result = the_output.replace('"','')
+                 return Response({"output":the_result})
               else:
-                return render(request,'emotion.html')
+                return render(request,'emotionanalysis.html')
    # [(0 is Happy), (1 is Angry), (2 is Sad), (3 is Fear)]
 
-
+def emotion(request):
+  #messages.info(request, f"{d}")
+  return render(request, 'emotion.html')
                       
                 
     
