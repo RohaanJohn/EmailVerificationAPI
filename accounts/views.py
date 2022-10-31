@@ -100,15 +100,16 @@ def contact(request):
 def emotionAnalysis(request):
                 
               if request.method== 'POST':
-                     pic_url = request.FILES['str1']
-                     url = 'http://1193-35-204-252-196.ngrok.io/predict'
-                     #'/content/drive/MyDrive/inputpics/randompic.jpg'
+                     #pic_url = request.FILES['str1']
+                     pic_url = '/content/drive/MyDrive/Fear.jpg'
+                     #pic_url = '/content/drive/MyDrive/inputpics/randompic.jpg'
+                     url = 'http://2a3a-35-245-2-33.ngrok.io/predict'
                      input_data_for_model = {
                       'str1' : pic_url
                      }
                      input_json  = json.dumps(input_data_for_model)
                      result = requests.post(url, data=input_json)
-                     print(result.text)
+                     return Response({"output":result.txt})
 
               else:
                 return render(request,'emotionanalysis.html')
