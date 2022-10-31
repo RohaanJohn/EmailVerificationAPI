@@ -126,7 +126,7 @@ def predict(request):
                     return Response({"output":the_result})
                        
               else:
-                return render(request,'emotion.html')
+                return render(request,'emotionanalysis.html')
    # [(0 is Happy), (1 is Angry), (2 is Sad), (3 is Fear)]
 
 
