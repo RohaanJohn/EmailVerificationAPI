@@ -107,10 +107,9 @@ def predict(request):
                      input_json  = json.dumps(input_data_for_model)
                      result = requests.post(url, data=input_json)
                      the_result = result.text
-                     the_result.replace('"','')
-                     #the_result.replace('\','')                   
-                     return Response({"output":the_result})
-
+                     return Response(result.text)                
+                     #return Response({"output":the_result})
+                       
               else:
                 return render(request,'emotion.html')
    # [(0 is Happy), (1 is Angry), (2 is Sad), (3 is Fear)]
