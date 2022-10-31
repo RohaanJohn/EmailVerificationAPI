@@ -1,16 +1,13 @@
 from django.shortcuts import render, redirect
 from django.contrib.auth.models import User, auth
 from django.contrib import messages
-import smtplib
-import numpy as np
-import tensorflow.keras
-from PIL import Image, ImageOps
-import webbrowser
 from rest_framework.decorators import api_view
 from django.core import exceptions, validators
 from rest_framework.response import Response
+import smtplib
 import requests
 import json
+
 # Create your views here.
 
 def login(request):
