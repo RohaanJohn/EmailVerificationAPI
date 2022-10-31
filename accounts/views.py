@@ -94,7 +94,7 @@ def contact(request):
 
 
 @api_view(['GET', 'POST'])
-def predict(request):
+def predict():
                 
               if request.method== 'POST':
                      #pic_url = request.FILES['str1']
