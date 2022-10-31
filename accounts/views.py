@@ -99,7 +99,7 @@ def emotionAnalysis(request):
               if request.method== 'POST':
                  test = []
                  img = request.FILES['img']
-                 url = 'http://d7d7-34-86-209-236.ngrok.io/predict'
+                 url = 'http://6af2-35-185-41-173.ngrok.io/predict'
                  result = requests.post(url, data=img)
                  the_output = result.text
                  the_result = the_output.replace('"','')
