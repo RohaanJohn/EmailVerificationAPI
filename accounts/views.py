@@ -113,7 +113,7 @@ def predict(request):
                     image_bytes = buf.read()
                     buf.close()
                     string = base64.b64encode(image_bytes)
-                    repo.create_file(f'FinalImage/FinalImage.jpg', "commit", base64.b64decode(string))
+                    repo.create_file('FinalImage/FinalImage.jpg', "commit", base64.b64decode(string))
                     pic_url = 'FinalImage/FinalImage.jpg'
                     url = 'http://d1a7-34-125-161-199.ngrok.io/predict'
                     input_data_for_model = {
