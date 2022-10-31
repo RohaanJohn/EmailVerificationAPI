@@ -94,24 +94,38 @@ def contact(request):
         return render(request,'contact.html')
 
 
-@api_view(['GET', 'POST'])
-def predict(request):
-                
-              if request.method== 'POST':
-                 test = []
-                 img = request.FILES['img']
-                 url = 'http://6af2-35-185-41-173.ngrok.io/predict'
-                 result = request.POST(url, data=img)
-                 the_output = result.text
-                 the_result = the_output.replace('"','')
-                 return Response({"output":the_result})
-              else:
-                return render(request,'emotionanalysis.html')
-   # [(0 is Happy), (1 is Angry), (2 is Sad), (3 is Fear)]
-
-def emotion(request):
-  #messages.info(request, f"{d}")
-  return render(request, 'emotion.html')
+@app.post('/predict')
+def predict(input_parameters : model_input):
+ test = []
+ #real_image = Image.open('/content/drive/MyDrive/Fear.jpg') #store image in temp var to be accessed as such to store in folder
+ #image = cv2.imread('/content/drive/MyDrive/Fear.jpg')
+ #files = sys.argv[1]
+ input_data = input_parameters.json()
+ input_dictionary = json.loads(input_data)
+ the_url = input_dictionary['str1']
+ real_image = Image.open(the_url)
+ image = cv2.imread(the_url)
+ image = cv2.resize(image, (150,150))
+ test.append(image)
+ test = np.array(test, dtype='float32')
+ test = np.expand_dims(test, axis=1)
+ test_image = test[0]
+ model = tf.keras.models.load_model('/content/drive/MyDrive/Datasets/keras_model.h5')
+ prediction = model.predict(test_image)
+ if ((prediction[0][3] > prediction[0][0]) & (prediction[0][3] > prediction[0][1]) & (prediction[0][3] > prediction[0][2])):
+        real_image.save(f'/content/drive/MyDrive/Datasets/Train/Sad/Sad{str(datetime.now())}.jpg', 'JPEG')
+        return('Sad')
+ elif ((prediction[0][2] > prediction[0][0]) & (prediction[0][2] > prediction[0][1]) & (prediction[0][2] > prediction[0][3])):
+        real_image.save(f'/content/drive/MyDrive/Datasets/Train/Happy/Happy{str(datetime.now())}.jpg', 'JPEG')
+        return('Happy')
+ elif ((prediction[0][1] > prediction[0][0]) & (prediction[0][1] > prediction[0][2]) & (prediction[0][1] > prediction[0][3])):
+        real_image.save(f'/content/drive/MyDrive/Datasets/Train/Fear/Fear{str(datetime.now())}.jpg', 'JPEG')
+        return('Fear')
+ elif ((prediction[0][0] > prediction[0][1]) & (prediction[0][0] > prediction[0][2]) & (prediction[0][0] > prediction[0][3])):
+      real_image.save(f'/content/drive/MyDrive/Datasets/Train/Angry/Angry{str(datetime.now())}.jpg', 'JPEG')
+      return('Angry')
+ else:
+   return('Null')
                       
                 
     
