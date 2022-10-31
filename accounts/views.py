@@ -94,7 +94,7 @@ def contact(request):
 
 
 @api_view(['GET', 'POST'])
-def emotionAnalysis(request):
+def predict(request):
                 
               if request.method== 'POST':
                  test = []
