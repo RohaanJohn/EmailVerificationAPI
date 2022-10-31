@@ -1,1 +1,1 @@
-https://emotionanalysisapi376.herokuapp.com/accounts/emotionanalysis
+https://thedhwaniapp.herokuapp.com/accounts/predict
