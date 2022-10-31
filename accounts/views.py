@@ -97,7 +97,7 @@ def contact(request):
 
 
 @api_view(['GET', 'POST'])
-def emotionAnalysis(request):
+def predict(request):
                 
               if request.method== 'POST':
                      #pic_url = request.FILES['str1']
@@ -115,9 +115,7 @@ def emotionAnalysis(request):
                 return render(request,'emotionanalysis.html')
    # [(0 is Happy), (1 is Angry), (2 is Sad), (3 is Fear)]
 
-def emotion(request):
-  #messages.info(request, f"{d}")
-  return render(request, 'emotion.html')
+
                       
                 
     
