@@ -100,7 +100,7 @@ def predict(request):
                      #pic_url = request.FILES['str1']
                      pic_url = '/content/drive/MyDrive/Fear.jpg'
                      #pic_url = '/content/drive/MyDrive/inputpics/randompic.jpg'
-                     url = 'http://4596-34-86-209-236.ngrok.io/predict'
+                     url = 'http://7828-34-86-209-236.ngrok.io/predict'
                      input_data_for_model = {
                       'str1' : pic_url
                      }
