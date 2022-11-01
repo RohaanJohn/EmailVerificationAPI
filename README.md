@@ -1,1 +1,1 @@
-https://thedhwaniapi.herokuapp.com/accounts/predict
+https://emailverification.herokuapp.com/accounts/verify
