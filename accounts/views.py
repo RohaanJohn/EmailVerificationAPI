@@ -106,7 +106,7 @@ def contact(request):
 def verify(request):
                 
               if request.method== 'POST':
-                    email = request.FILES['email']
+                    email = request.POST['email']
                     regex = r'\b[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Z|a-z]{2,}\b'
  
                     # Define a function for
