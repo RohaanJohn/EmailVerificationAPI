@@ -122,7 +122,7 @@ def predict(request):
                         return Response({"output":"Valid"})
  
                     else:
-                        return Response({"output":"Invalid"}")
+                        return Response({"output":"Invalid"})
                        
               else:
                 return render(request,'emailverification.html')
