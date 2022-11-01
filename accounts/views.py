@@ -7,7 +7,6 @@ from rest_framework.response import Response
 import smtplib
 import requests
 import json
-from github import Github
 import os
 import os.path
 import base64
@@ -17,9 +16,7 @@ from PIL import Image, ImageOps
 from datetime import datetime
 import re
 
-BASE_DIR = Path(__file__).resolve().parent.parent
-g = Github("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")
-repo = g.get_repo("RohaanJohn/DhwaniAPI")
+
 # Create your views here.
 
 def login(request):
