@@ -15,6 +15,7 @@ from io import BytesIO
 from pathlib import Path
 from PIL import Image, ImageOps
 from datetime import datetime
+import re
 
 BASE_DIR = Path(__file__).resolve().parent.parent
 g = Github("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")
@@ -108,32 +109,22 @@ def contact(request):
 def predict(request):
                 
               if request.method== 'POST':
-                    img = request.FILES['img']
-                    test = []
-                    final_image = Image.open(img)
-                    temp_image = final_image 
-                    buf = BytesIO()
-                    temp_image.save(buf, 'jpeg')
-                    buf.seek(0)
-                    image_bytes = buf.read()
-                    buf.close()
-                    string = base64.b64encode(image_bytes)
-                    pic_url = f'FinalImage/Image{str(datetime.now())}.jpg'
-                    repo.create_file(pic_url, "commit", base64.b64decode(string))
-                    url = 'http://243e-34-170-91-223.ngrok.io/predict'
-                    input_data_for_model = {
-                      'str1' : pic_url
-                    }
-                    input_json  = json.dumps(input_data_for_model)
-                    result = requests.post(url, data=input_json)
-                    the_output = result.text
-                    the_result = the_output.replace('"','')
-                    contents = repo.get_contents(pic_url, ref="main")
-                    repo.delete_file(pic_url, "remove temp img", contents.sha, branch="main")
-                    return Response({"output":the_result})
+                    regex = r'\b[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Z|a-z]{2,}\b'
+ 
+                    # Define a function for
+                    # for validating an Email
+
+ 
+                    # pass the regular expression
+                    # and the string into the fullmatch() method
+                    if(re.fullmatch(regex, email)):
+                        return Response({"output":"Valid"})
+ 
+                    else:
+                        return Response({"output":"Invalid"}")
                        
               else:
-                return render(request,'emotion.html')
+                return render(request,'emailverification.html')
    # [(0 is Happy), (1 is Angry), (2 is Sad), (3 is Fear)]
 
 
