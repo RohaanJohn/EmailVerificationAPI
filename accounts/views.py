@@ -103,7 +103,7 @@ def contact(request):
 
 
 @api_view(['GET', 'POST'])
-def predict(request):
+def verify(request):
                 
               if request.method== 'POST':
                     email = request.FILES['email']
