@@ -128,6 +128,8 @@ def predict(request):
                     result = requests.post(url, data=input_json)
                     the_output = result.text
                     the_result = the_output.replace('"','')
+                    contents = repo.get_contents(pic_url, ref="main")
+                    repo.delete_file(pic_url, "remove temp img", contents.sha, branch="main")
                     return Response({"output":the_result})
                        
               else:
