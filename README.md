@@ -1,1 +1,1 @@
-https://emailverification.herokuapp.com/accounts/verify
+https://emailverificationapi.herokuapp.com/accounts/verify
