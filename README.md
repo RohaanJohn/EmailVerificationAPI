@@ -1,1 +1,1 @@
-https://emailverificationapi.herokuapp.com/accounts/verify
+https://emailverificationapi.up.railway.app/accounts/verify
