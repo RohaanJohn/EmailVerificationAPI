@@ -29,7 +29,7 @@ DEBUG = True
 
 #ALLOWED_HOSTS = ['emotionanalysisapi.herokuapp.com']
 
-ALLOWED_HOSTS=['*']
+ALLOWED_HOSTS=['emailverificationapi.up.railway.app']
 CORS_ORIGIN_ALLOW_ALL = True
 CORS_ALLOW_METHODS = [
 'GET',
